@@ -1,0 +1,9 @@
+{
+  "dataset": "padchest_demo",
+  "backbone": "clip_vitb32",
+  "n": 24,
+  "dim": 512,
+  "id_hash": "e79400e0cee6060bd6f38c3035ee4b0f7f90e62277e5b05023b9aa4f3396c5d0",
+  "seconds": 6.35,
+  "per_image_ms": 264.65
+}

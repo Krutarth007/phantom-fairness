@@ -1,0 +1,138 @@
+{
+  "created_utc": "2026-06-21T18:46:24Z",
+  "seed": 1997,
+  "versions": {
+    "python": "3.11.15",
+    "numpy": "2.4.4",
+    "pandas": "3.0.3",
+    "matplotlib": "3.11.0",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": "2.12.1+cpu"
+  },
+  "config": {
+    "nih_root": "C:\\Users\\kruta\\Downloads\\NIH Chest X-rays",
+    "padchest_root": "C:\\Users\\kruta\\Downloads\\PadChest Chest X-rays (sample)",
+    "nih_labels_name": "Data_Entry_2017.csv",
+    "nih_google_name": "google2019_nih-chest-xray-labels.csv.gz",
+    "nih_google_raw_val": "four_findings_expert_labels_validation_labels.csv",
+    "nih_google_raw_test": "four_findings_expert_labels_test_labels.csv",
+    "padchest_labels_name": "chest_x_ray_images_labels_sample.csv",
+    "padchest_image_subdir": "sample",
+    "nih_image_subdirs_glob": "images_*",
+    "project_dir": "C:\\Users\\kruta\\Downloads\\phantom_fairness",
+    "canonical_findings": [
+      "Airspace opacity",
+      "Pneumothorax",
+      "Nodule or mass",
+      "Fracture"
+    ],
+    "age_bands": [
+      [
+        "<40",
+        0.0,
+        40.0
+      ],
+      [
+        "40-60",
+        40.0,
+        60.0
+      ],
+      [
+        ">60",
+        60.0,
+        200.0
+      ]
+    ],
+    "elderly_age_threshold": 60.0,
+    "embedding_backbones": [
+      "xrv_densenet121",
+      "resnet50_imagenet",
+      "clip_vitb32"
+    ],
+    "embed_batch_size": 32,
+    "embed_image_size": 224,
+    "l2_normalise_embeddings": false,
+    "random_seed": 1997,
+    "cpu_threads": 13,
+    "demo_subset_size": 64,
+    "run_embedding_demo": true,
+    "strict_paths": false
+  },
+  "inputs": {
+    "nih_labels": {
+      "path": "C:\\Users\\kruta\\Downloads\\NIH Chest X-rays\\Data_Entry_2017.csv",
+      "exists": true,
+      "sha256": "88f75094e25ccc0c6f1f9cdfd4b2f94f9379a0ae07d5ff4dcf94242707b07462",
+      "bytes": 7861152
+    },
+    "nih_google_packaged": {
+      "path": "C:\\Users\\kruta\\Downloads\\NIH Chest X-rays\\google2019_nih-chest-xray-labels.csv.gz",
+      "exists": true,
+      "sha256": "1d1b846e463753ed0219f67e21b10c8aef381897dbd64865c8191aa5794e8048",
+      "bytes": 45090
+    },
+    "padchest_labels": {
+      "path": "C:\\Users\\kruta\\Downloads\\PadChest Chest X-rays (sample)\\chest_x_ray_images_labels_sample.csv",
+      "exists": true,
+      "sha256": "f29a5ca1cd37060c2b10873364b31f284b555de846729744c865a1350ab50f06",
+      "bytes": 14949
+    }
+  },
+  "counts": {
+    "nih_images_indexed": 112120,
+    "nih_nlp_label_rows": 112120,
+    "nih_adjudicated_rows": 4376,
+    "nih_master_rows": 112120,
+    "nih_with_adjudicated": 4376,
+    "padchest_images_indexed": 24,
+    "padchest_label_rows": 24,
+    "padchest_master_rows": 24
+  },
+  "label_mapping_tight": {
+    "Airspace opacity": [
+      "Infiltration",
+      "Consolidation"
+    ],
+    "Pneumothorax": [
+      "Pneumothorax"
+    ],
+    "Nodule or mass": [
+      "Nodule",
+      "Mass"
+    ],
+    "Fracture": []
+  },
+  "padchest_term_map": {
+    "Airspace opacity": [
+      "infiltrates",
+      "alveolar pattern",
+      "consolidation",
+      "pneumonia",
+      "air bronchogram",
+      "increased density",
+      "atypical pneumonia",
+      "interstitial pattern",
+      "ground glass pattern"
+    ],
+    "Pneumothorax": [
+      "pneumothorax",
+      "hydropneumothorax"
+    ],
+    "Nodule or mass": [
+      "nodule",
+      "multiple nodules",
+      "mass",
+      "pulmonary mass",
+      "lung mass",
+      "pseudonodule"
+    ],
+    "Fracture": [
+      "fracture",
+      "rib fracture",
+      "clavicle fracture",
+      "humeral fracture",
+      "vertebral fracture",
+      "callus rib fracture"
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+finding,n_overlap,adj_positives,agreement,nlp_false_neg,nlp_false_pos
+Airspace opacity,4376,2166,0.645,1280,275
+Pneumothorax,4376,238,0.941,129,129
+Nodule or mass,4376,605,0.875,349,199
+Fracture,4376,186,0.957,186,0

@@ -1,0 +1,226 @@
+{
+  "project": "phantom_fairness",
+  "parts": {
+    "provenance_part1": {
+      "created_utc": "2026-06-21T18:46:24Z",
+      "seed": 1997,
+      "versions": {
+        "python": "3.11.15",
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "matplotlib": "3.11.0",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "torch": "2.12.1+cpu"
+      },
+      "config": {
+        "nih_root": "C:\\Users\\kruta\\Downloads\\NIH Chest X-rays",
+        "padchest_root": "C:\\Users\\kruta\\Downloads\\PadChest Chest X-rays (sample)",
+        "nih_labels_name": "Data_Entry_2017.csv",
+        "nih_google_name": "google2019_nih-chest-xray-labels.csv.gz",
+        "nih_google_raw_val": "four_findings_expert_labels_validation_labels.csv",
+        "nih_google_raw_test": "four_findings_expert_labels_test_labels.csv",
+        "padchest_labels_name": "chest_x_ray_images_labels_sample.csv",
+        "padchest_image_subdir": "sample",
+        "nih_image_subdirs_glob": "images_*",
+        "project_dir": "C:\\Users\\kruta\\Downloads\\phantom_fairness",
+        "canonical_findings": [
+          "Airspace opacity",
+          "Pneumothorax",
+          "Nodule or mass",
+          "Fracture"
+        ],
+        "age_bands": [
+          [
+            "<40",
+            0.0,
+            40.0
+          ],
+          [
+            "40-60",
+            40.0,
+            60.0
+          ],
+          [
+            ">60",
+            60.0,
+            200.0
+          ]
+        ],
+        "elderly_age_threshold": 60.0,
+        "embedding_backbones": [
+          "xrv_densenet121",
+          "resnet50_imagenet",
+          "clip_vitb32"
+        ],
+        "embed_batch_size": 32,
+        "embed_image_size": 224,
+        "l2_normalise_embeddings": false,
+        "random_seed": 1997,
+        "cpu_threads": 13,
+        "demo_subset_size": 64,
+        "run_embedding_demo": true,
+        "strict_paths": false
+      },
+      "inputs": {
+        "nih_labels": {
+          "path": "C:\\Users\\kruta\\Downloads\\NIH Chest X-rays\\Data_Entry_2017.csv",
+          "exists": true,
+          "sha256": "88f75094e25ccc0c6f1f9cdfd4b2f94f9379a0ae07d5ff4dcf94242707b07462",
+          "bytes": 7861152
+        },
+        "nih_google_packaged": {
+          "path": "C:\\Users\\kruta\\Downloads\\NIH Chest X-rays\\google2019_nih-chest-xray-labels.csv.gz",
+          "exists": true,
+          "sha256": "1d1b846e463753ed0219f67e21b10c8aef381897dbd64865c8191aa5794e8048",
+          "bytes": 45090
+        },
+        "padchest_labels": {
+          "path": "C:\\Users\\kruta\\Downloads\\PadChest Chest X-rays (sample)\\chest_x_ray_images_labels_sample.csv",
+          "exists": true,
+          "sha256": "f29a5ca1cd37060c2b10873364b31f284b555de846729744c865a1350ab50f06",
+          "bytes": 14949
+        }
+      },
+      "counts": {
+        "nih_images_indexed": 112120,
+        "nih_nlp_label_rows": 112120,
+        "nih_adjudicated_rows": 4376,
+        "nih_master_rows": 112120,
+        "nih_with_adjudicated": 4376,
+        "padchest_images_indexed": 24,
+        "padchest_label_rows": 24,
+        "padchest_master_rows": 24
+      },
+      "label_mapping_tight": {
+        "Airspace opacity": [
+          "Infiltration",
+          "Consolidation"
+        ],
+        "Pneumothorax": [
+          "Pneumothorax"
+        ],
+        "Nodule or mass": [
+          "Nodule",
+          "Mass"
+        ],
+        "Fracture": []
+      },
+      "padchest_term_map": {
+        "Airspace opacity": [
+          "infiltrates",
+          "alveolar pattern",
+          "consolidation",
+          "pneumonia",
+          "air bronchogram",
+          "increased density",
+          "atypical pneumonia",
+          "interstitial pattern",
+          "ground glass pattern"
+        ],
+        "Pneumothorax": [
+          "pneumothorax",
+          "hydropneumothorax"
+        ],
+        "Nodule or mass": [
+          "nodule",
+          "multiple nodules",
+          "mass",
+          "pulmonary mass",
+          "lung mass",
+          "pseudonodule"
+        ],
+        "Fracture": [
+          "fracture",
+          "rib fracture",
+          "clavicle fracture",
+          "humeral fracture",
+          "vertebral fracture",
+          "callus rib fracture"
+        ]
+      }
+    },
+    "provenance_part2": {
+      "created_utc": "2026-06-21T22:03:53Z",
+      "part": "2",
+      "primary_backbone": "xrv_densenet121",
+      "cohort": {
+        "train": 20000,
+        "val": 12930,
+        "test": 26921,
+        "eval_clean": 4376
+      },
+      "nlp_findings": [
+        "Airspace opacity",
+        "Pneumothorax",
+        "Nodule or mass"
+      ],
+      "tables": {
+        "table2_headline_phantom_fairness.csv": "67ce58e27d86c68f213e1dd9a0865ea476cf246401443656849f63cc6a586267",
+        "table3_group_noise.csv": "70e138f09a965a8a2a680281e804c8f18414347ce036f65183182baa45e664b2",
+        "table4_calibration.csv": "c8a6db9e91dfa0ce7b37d7574b348fc2595802c80ca357d06f9ba64ee656c802",
+        "table5_bias_amplification.csv": "06c0a948d60cbf862bab7da3e6015ee0f99fb0e3d9c03f6c57eee541cf6bda37",
+        "table6_backbone_ablation.csv": "a230a9b27c6295515c6b2af32c2979c9ac5ae3c8cc01a29072d3ca5c36b5eee6",
+        "table7_fracture_case.csv": "84051d36c0ef5d02c135d29fa3863cf3781fd3982b9afdd09616ab8fe0896fb4"
+      },
+      "n_bootstrap": 5000,
+      "seed": 1997
+    },
+    "provenance_part3": {
+      "part": 3,
+      "backbone_primary": "xrv_densenet121",
+      "n_eval_clean": 4375,
+      "n_padchest": 24,
+      "n_bootstrap": 5000,
+      "n_inject_mc": 200,
+      "seed": 1997,
+      "tables": {
+        "table8_padchest_discrimination.csv": "7cd1e411baefa43e45be6d80256b689012bfeca8d71fe13c82ff0e40a0f4ba7c",
+        "table9_cross_continental.csv": "6d0ed13159ac9705258e21459d71ae12d78a55f5a3f9ad8c3d010e7375eb0bcc",
+        "table10_phantom_decomposition.csv": "5f1c274692d0ed646a0a4067e56be2c4dcfc9522cf985dc5973686f03416b7cd",
+        "table10a_instance_dependence.csv": "022c027e944a5feaf85630f4efb0a4b84f727b120bbe6edc12bebcc7581510f6",
+        "table10b_instance_dependence_backbones.csv": "77ab0bcb71dc073ced90da345a66e6bf08a7d27b307018e99b701ceff485fb8d",
+        "table11_remedy.csv": "916eca1678d216bde1ffb31ab0b2710bba773c1047a12d57872995489f6e79d7",
+        "table12_robustness.csv": "067520eb71deb295ed3d3d52f90aeb57183133b08c5fac1689ae34cf98c37a70"
+      },
+      "figures": {
+        "fig9_mechanism.png": "23580455b421db000599d56161b17feb922c069870028a0433ad5d51c15c5d7f",
+        "fig10_remedy.png": "edfaf4e42a9e5a460cf01b65f2618918c378804de78b708daf1830d4eac3e283"
+      },
+      "results_doc": "e3d4cc58d12a206a295fd1a49d08689eb144da2144e0d3438de235ab4fc3e225"
+    }
+  },
+  "all_tables": [
+    "table10_phantom_decomposition.csv",
+    "table10a_instance_dependence.csv",
+    "table10b_instance_dependence_backbones.csv",
+    "table11_remedy.csv",
+    "table12_robustness.csv",
+    "table2_headline_phantom_fairness.csv",
+    "table3_group_noise.csv",
+    "table4_calibration.csv",
+    "table5_bias_amplification.csv",
+    "table6_backbone_ablation.csv",
+    "table7_fracture_case.csv",
+    "table8_padchest_discrimination.csv",
+    "table9_cross_continental.csv",
+    "table_label_mapping.csv",
+    "table_noise_preview.csv",
+    "table_padchest_power.csv",
+    "table_prevalence_by_regime.csv",
+    "table_subgroup_counts.csv"
+  ],
+  "all_figures": [
+    "fig10_remedy.png",
+    "fig1_prevalence_by_regime.png",
+    "fig2_nih_sex_age.png",
+    "fig3_projection_mix.png",
+    "fig4_phantom_scatter.png",
+    "fig5_noise_heatmap.png",
+    "fig6_reliability_sex.png",
+    "fig7_roc_pr_Airspace_opacity.png",
+    "fig7_roc_pr_Nodule_or_mass.png",
+    "fig7_roc_pr_Pneumothorax.png",
+    "fig8_threshold_sweep.png",
+    "fig9_mechanism.png"
+  ]
+}

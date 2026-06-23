@@ -1,0 +1,9 @@
+{
+  "dataset": "nih_demo",
+  "backbone": "clip_vitb32",
+  "n": 64,
+  "dim": 512,
+  "id_hash": "f1f4b6ff5ed5a66f9389e8c24a24b90e23ebf8ac53ab2915a58f930998a8115b",
+  "seconds": 6.43,
+  "per_image_ms": 100.42
+}

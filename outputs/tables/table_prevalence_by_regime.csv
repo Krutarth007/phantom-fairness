@@ -1,0 +1,13 @@
+regime,finding,prevalence,n_pos,n
+NIH NLP,Airspace opacity,0.20816981805208706,23340,112120
+NIH NLP,Pneumothorax,0.04728861933642526,5302,112120
+NIH NLP,Nodule or mass,0.09995540492329646,11207,112120
+NIH NLP,Fracture,0.0,0,112120
+NIH adjudicated,Airspace opacity,0.49497257769652653,2166,4376
+NIH adjudicated,Pneumothorax,0.054387568555758686,238,4376
+NIH adjudicated,Nodule or mass,0.138254113345521,605,4376
+NIH adjudicated,Fracture,0.04250457038391225,186,4376
+PadChest,Airspace opacity,0.20833333333333334,5,24
+PadChest,Pneumothorax,0.0,0,24
+PadChest,Nodule or mass,0.041666666666666664,1,24
+PadChest,Fracture,0.08333333333333333,2,24

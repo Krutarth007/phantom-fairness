@@ -1,0 +1,8 @@
+{
+  "tag": "val",
+  "backbone": "clip_vitb32",
+  "n": 12930,
+  "dim": 512,
+  "id_hash": "230b6ccbe52db7fa7b78f7b71c951c36c5819196c8b2024eb99a87e4a7908c52",
+  "seconds": 739.13
+}

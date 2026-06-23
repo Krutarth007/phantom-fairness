@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-06-21T22:03:53Z",
+  "part": "2",
+  "primary_backbone": "xrv_densenet121",
+  "cohort": {
+    "train": 20000,
+    "val": 12930,
+    "test": 26921,
+    "eval_clean": 4376
+  },
+  "nlp_findings": [
+    "Airspace opacity",
+    "Pneumothorax",
+    "Nodule or mass"
+  ],
+  "tables": {
+    "table2_headline_phantom_fairness.csv": "67ce58e27d86c68f213e1dd9a0865ea476cf246401443656849f63cc6a586267",
+    "table3_group_noise.csv": "70e138f09a965a8a2a680281e804c8f18414347ce036f65183182baa45e664b2",
+    "table4_calibration.csv": "c8a6db9e91dfa0ce7b37d7574b348fc2595802c80ca357d06f9ba64ee656c802",
+    "table5_bias_amplification.csv": "06c0a948d60cbf862bab7da3e6015ee0f99fb0e3d9c03f6c57eee541cf6bda37",
+    "table6_backbone_ablation.csv": "a230a9b27c6295515c6b2af32c2979c9ac5ae3c8cc01a29072d3ca5c36b5eee6",
+    "table7_fracture_case.csv": "84051d36c0ef5d02c135d29fa3863cf3781fd3982b9afdd09616ab8fe0896fb4"
+  },
+  "n_bootstrap": 5000,
+  "seed": 1997
+}

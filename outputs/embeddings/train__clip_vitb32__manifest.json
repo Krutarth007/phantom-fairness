@@ -1,0 +1,8 @@
+{
+  "tag": "train",
+  "backbone": "clip_vitb32",
+  "n": 20000,
+  "dim": 512,
+  "id_hash": "897d34d543ed29d945189731d663375f6198f304a6fe6c3c9737910f6b4b2614",
+  "seconds": 1144.61
+}

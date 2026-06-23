@@ -1,0 +1,8 @@
+{
+  "tag": "evalclean",
+  "backbone": "resnet50_imagenet",
+  "n": 4376,
+  "dim": 2048,
+  "id_hash": "70fdec5c6be4857aa9baf784a974313c8435e89370abfdccb660fd4fb1628df0",
+  "seconds": 288.31
+}

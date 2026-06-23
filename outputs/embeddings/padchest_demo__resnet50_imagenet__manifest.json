@@ -1,0 +1,9 @@
+{
+  "dataset": "padchest_demo",
+  "backbone": "resnet50_imagenet",
+  "n": 24,
+  "dim": 2048,
+  "id_hash": "e79400e0cee6060bd6f38c3035ee4b0f7f90e62277e5b05023b9aa4f3396c5d0",
+  "seconds": 5.81,
+  "per_image_ms": 242.23
+}
