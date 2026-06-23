@@ -1,0 +1,35 @@
+# ---- Data (never commit raw datasets or labels) ----
+data/
+*.csv.gz
+Data_Entry_2017.csv
+google2019_nih-chest-xray-labels*.csv
+chest_x_ray_images_labels_sample.csv
+*.dcm
+*.png.dcm
+images/
+*/images/
+
+# ---- Derived heavy artefacts (regenerate locally) ----
+cache/
+*.parquet
+*.npy
+*.npz
+*.pt
+*.pth
+embeddings/*.parquet
+embeddings/*.npy
+
+# ---- Python / Jupyter ----
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+env/
+.conda/
+*.egg-info/
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
