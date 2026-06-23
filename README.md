@@ -4,7 +4,7 @@ A reproducible, CPU-only pipeline that tests whether the apparent demographic fa
 radiograph classifiers trained on NIH ChestX-ray14 is real or an artefact of how the labels were
 generated, and identifies the operative noise mechanism.
 
-> **Paper:** *Phantom fairness: a reproducible audit of instance-dependent label noise as a hidden
+> **Research Paper:** *Phantom fairness: a reproducible audit of instance-dependent label noise as a hidden
 > source of demographic bias in chest radiograph classifiers.* Patel K., Beedala P., Vora D.,
 > Mehta H. 
 
