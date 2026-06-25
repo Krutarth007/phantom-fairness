@@ -169,9 +169,9 @@ If you use this code or the auditing protocol, please cite:
   title   = {Phantom fairness: a reproducible audit of instance-dependent label noise
              as a hidden source of demographic bias in chest radiograph classifiers},
   author  = {Patel, Krutarth and Beedala, Phanindra and Vora, Darshit and Mehta, Harshil},
-  journal = {Computer Methods and Programs in Biomedicine},
+  journal = {},
   year    = {2026},
-  note    = {Under review},
+  note    = {},
   doi     = {TO-BE-ADDED}
 }
 ```
