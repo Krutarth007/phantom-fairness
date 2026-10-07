@@ -5,8 +5,7 @@ radiograph classifiers trained on NIH ChestX-ray14 is real or an artefact of how
 generated, and identifies the operative noise mechanism.
 
 > **Research Paper:** *Phantom fairness: a reproducible audit of instance-dependent label noise as a hidden
-> source of demographic bias in chest radiograph classifiers.* Patel K., Beedala P., Vora D.,
-> Mehta H. 
+> source of demographic bias in chest radiograph classifiers.* XXX, XXX, XXX, XXX
 
 ---
 
@@ -168,7 +167,7 @@ If you use this code or the auditing protocol, please cite:
 @article{patel_phantom_fairness_2026,
   title   = {Phantom fairness: a reproducible audit of instance-dependent label noise
              as a hidden source of demographic bias in chest radiograph classifiers},
-  author  = {Patel, Krutarth and Beedala, Phanindra and Vora, Darshit and Mehta, Harshil},
+  author  = {XXX, XXX, XXX, XXX},
   journal = {},
   year    = {2026},
   note    = {},
