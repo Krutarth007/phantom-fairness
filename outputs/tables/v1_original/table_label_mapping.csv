@@ -1,5 +1,5 @@
-Canonical finding,"NIH NLP source(s), primary mapping","NIH NLP source(s), wide mapping (sensitivity)",Reference standard (Majkowska et al.),PadChest term(s)
-Airspace opacity,"Infiltration, Consolidation","Infiltration, Consolidation, Pneumonia, Edema, Atelectasis",Airspace opacity,"infiltrates, alveolar pattern, consolidation, pneumonia, air bronchogram, increased density, atypical pneumonia, interstitial pattern, ground glass pattern"
-Pneumothorax,Pneumothorax,Pneumothorax,Pneumothorax,"pneumothorax, hydropneumothorax"
-Nodule or mass,"Nodule, Mass","Nodule, Mass",Nodule or mass,"nodule, multiple nodules, mass, pulmonary mass, lung mass, pseudonodule"
-Fracture,none (no NLP label; all images negative),none,Fracture,"fracture, rib fracture, clavicle fracture, humeral fracture, vertebral fracture, callus rib fracture"
+Canonical finding,NIH NLP source(s),NIH adjudicated source,PadChest term(s)
+Airspace opacity,"Infiltration, Consolidation",Airspace opacity,"infiltrates, alveolar pattern, consolidation, pneumonia, air bronchogram, increa..."
+Pneumothorax,Pneumothorax,Pneumothorax,"pneumothorax, hydropneumothorax"
+Nodule or mass,"Nodule, Mass",Nodule or mass,"nodule, multiple nodules, mass, pulmonary mass, lung mass, pseudonodule"
+Fracture,(none - structurally absent),Fracture,"fracture, rib fracture, clavicle fracture, humeral fracture, vertebral fracture,..."
