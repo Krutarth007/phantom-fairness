@@ -1,0 +1,13 @@
+backbone,finding,oof_auroc_vs_reference,C_chosen,seconds
+xrv_densenet121,Airspace opacity,0.9468766445670298,"{""0.01"": 10}",35.98190420004539
+xrv_densenet121,Pneumothorax,0.8143440117163616,"{""0.01"": 10}",37.90635150001617
+xrv_densenet121,Nodule or mass,0.7473803625841243,"{""0.01"": 10}",48.17169579997426
+resnet50_imagenet,Airspace opacity,0.8662228974308493,"{""0.01"": 10}",46.06912509998074
+resnet50_imagenet,Pneumothorax,0.7685277156547898,"{""0.01"": 10}",44.265730100043584
+resnet50_imagenet,Nodule or mass,0.6108667821207007,"{""0.01"": 10}",46.00462249998236
+clip_vitb32,Airspace opacity,0.8796719288631624,"{""0.01"": 10}",26.194163500040304
+clip_vitb32,Pneumothorax,0.7689685011060262,"{""0.01"": 10}",21.953346199996304
+clip_vitb32,Nodule or mass,0.6321684898173926,"{""0.01"": 10}",27.800887799996417
+xrv_densenet121_chex,Airspace opacity,0.8995684990513502,"{""0.01"": 10}",52.94281099998625
+xrv_densenet121_chex,Pneumothorax,0.7679924761782886,"{""0.01"": 10}",45.491063499997836
+xrv_densenet121_chex,Nodule or mass,0.6203343051932394,"{""0.01"": 10}",66.64333990000887

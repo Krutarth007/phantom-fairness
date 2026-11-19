@@ -1,0 +1,6 @@
+set,images,patients,images_per_patient_mean,median,max,pct_patients_with_>1_image,pct_images_from_patients_with_>1_image
+all evaluation images,4376,1695,2.5817109144542774,1.0,56,45.899705014749266,79.04478976234003
+reference-standard positives: Airspace opacity,2166,820,2.6414634146341465,1.0,47,47.92682926829268,80.28624192059095
+reference-standard positives: Pneumothorax,238,154,1.5454545454545454,1.0,6,31.16883116883117,55.46218487394958
+reference-standard positives: Nodule or mass,605,346,1.7485549132947977,1.0,36,32.369942196531795,61.32231404958678
+reference-standard positives: Fracture,186,106,1.7547169811320755,1.0,44,20.754716981132077,54.83870967741935

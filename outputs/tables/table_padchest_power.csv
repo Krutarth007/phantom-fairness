@@ -1,0 +1,9 @@
+axis,group,n,min_detectable_TPR_gap,underpowered_at_0.15
+sex,M,13,0.549,True
+sex,F,11,0.597,True
+age_band,>60,11,0.597,True
+age_band,<40,8,0.7,True
+age_band,40-60,5,0.886,True
+view,PA,14,0.529,True
+view,OTHER,9,0.66,True
+view,AP,1,,False

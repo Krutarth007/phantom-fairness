@@ -1,0 +1,12 @@
+step,images,patients
+NIH ChestX-ray14 images with metadata,112120,30805
+Images with radiologist-adjudicated labels,4376,1695
+   of which Google split 'test',1962,860
+   of which Google split 'val',2414,835
+Held out: all images of patients with any adjudicated image,26921,1695
+   Evaluation set: adjudicated images of held-out patients,4376,1695
+   Entering subgroup analyses (subgroups with >= 20 images),4375,1694
+Development pool: patients without any adjudicated image,85199,29110
+"   Validation: random 15% of pool patients, all their images",12930,4366
+   Training candidates: remaining pool patients,72269,24744
+"   Training sample: random 20,000 images of the candidates",20000,10998

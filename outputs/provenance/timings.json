@@ -1,0 +1,30 @@
+{
+  "part2": {
+    "load_masters_and_cohort": 0.258,
+    "embeddings_xrv_densenet121": 5532.526,
+    "regime_difference_table_primary": 0.0
+  },
+  "part3": {
+    "load_masters_and_cohort": 0.29,
+    "load_embeddings_xrv_densenet121": 0.13,
+    "load_embeddings_resnet50_imagenet": 0.258,
+    "load_embeddings_clip_vitb32": 0.096,
+    "load_embeddings_xrv_densenet121_chex": 0.205,
+    "instance_dependence_xrv_densenet121": 14.488,
+    "instance_dependence_resnet50_imagenet": 16.633,
+    "instance_dependence_clip_vitb32": 16.091,
+    "instance_dependence_xrv_densenet121_chex": 16.554,
+    "injection_point": 35.094,
+    "injection_bootstrap": 502.238,
+    "injection_crossfit": 170.108,
+    "remedy": 6.59
+  },
+  "part4": {
+    "load_masters_and_cohort": 0.292,
+    "crossfit_reference_heads_xrv_densenet121": 122.06,
+    "crossfit_reference_heads_resnet50_imagenet": 136.3395,
+    "crossfit_reference_heads_clip_vitb32": 75.9484,
+    "crossfit_reference_heads_xrv_densenet121_chex": 165.0772,
+    "instance_dependence_nlp_independent": 82.727
+  }
+}

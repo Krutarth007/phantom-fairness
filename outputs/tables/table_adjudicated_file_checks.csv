@@ -1,0 +1,16 @@
+check,result
+raw values in 'Airspace opacity',"{""NO"": 2210, ""YES"": 2166}"
+raw values in 'Pneumothorax',"{""NO"": 4138, ""YES"": 238}"
+raw values in 'Nodule or mass',"{""NO"": 3771, ""YES"": 605}"
+raw values in 'Fracture',"{""NO"": 4190, ""YES"": 186}"
+images in adjudicated file joined to NIH index,4376
+Google split counts (Set Id),"{""val"": 2414, ""test"": 1962}"
+note,"Google's release notes report 2,412 validation and 1,962 test images (4,374); the TorchXRayVision copy used here has the counts shown above."
+% images whose NIH 'Finding Labels' string is identical in the adjudicated file,100.0
+% patient ID agreement,100.0
+% sex agreement,100.0
+% projection agreement,100.0
+mapping: Airspace opacity,Infiltration | Consolidation
+mapping: Pneumothorax,Pneumothorax
+mapping: Nodule or mass,Nodule | Mass
+mapping: Fracture,no NLP label (all negative)
