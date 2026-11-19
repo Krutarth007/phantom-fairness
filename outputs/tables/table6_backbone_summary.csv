@@ -1,0 +1,4 @@
+backbone,positive_all24,median_diff_all24,positive_tpr_sex_olderwomen,intervals_excluding_zero
+clip_vitb32,16.0,0.012714470891720564,3.0,0.0
+resnet50_imagenet,18.0,0.01578782007134555,5.0,2.0
+xrv_densenet121,16.0,0.021351646513820433,3.0,1.0

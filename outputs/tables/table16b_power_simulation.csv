@@ -1,0 +1,9 @@
+finding,axis,metric,multiplier,patients,images_approx,empirical_power,studies,analytic_power
+Pneumothorax,elderly_women,tpr,1,1694,4375,0.075,200,0.32285411371817185
+Pneumothorax,elderly_women,tpr,2,3388,8750,0.27,200,0.563824994209302
+Pneumothorax,elderly_women,tpr,4,6776,17500,0.69,200,0.8505958061369049
+Pneumothorax,elderly_women,tpr,8,13552,35000,0.93,200,0.9887316425223631
+Nodule or mass,elderly_women,auroc,1,1694,4375,0.325,200,0.5435431120215835
+Nodule or mass,elderly_women,auroc,2,3388,8750,0.75,200,0.8330804699184773
+Nodule or mass,elderly_women,auroc,4,6776,17500,0.98,200,0.9853174767719174
+Nodule or mass,elderly_women,auroc,8,13552,35000,1.0,200,0.9999504489683997

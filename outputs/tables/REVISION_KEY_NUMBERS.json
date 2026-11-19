@@ -1,0 +1,158 @@
+{
+  "regime_difference": {
+    "positive_of_24": 16,
+    "median": 0.021,
+    "patient_intervals_excluding_zero": 1,
+    "min_bh_p_patient": 0.778,
+    "median_ci_width_ratio_patient_vs_image": 1.05
+  },
+  "pneumothorax_older_women_tpr": {
+    "gap_nlp": 0.064,
+    "gap_ref": 0.184,
+    "regime_diff": 0.12,
+    "diff_lo_patient": -0.074,
+    "diff_hi_patient": 0.235,
+    "p_two_patient": 0.265
+  },
+  "instance_dependence_nlp_trained": {
+    "tests": 12,
+    "positive_r": 12,
+    "sig_patient_boot_bh": 12,
+    "sig_wcr_bh": 8,
+    "sig_gee_adj_bh": 8,
+    "median_r_by_backbone": {
+      "clip_vitb32": 0.152,
+      "resnet50_imagenet": 0.16,
+      "xrv_densenet121": 0.202,
+      "xrv_densenet121_chex": 0.134
+    }
+  },
+  "instance_dependence_nlp_independent": {
+    "tests": 12,
+    "positive_r": 11,
+    "sig_patient_boot_bh": 10,
+    "sig_gee_adj_bh": 8,
+    "median_r_by_type": {
+      "reference-trained head (cross-fitted)": 0.153,
+      "zero-shot CheXpert model": 0.108
+    }
+  },
+  "injection_bootstrap": [
+    {
+      "finding": "Airspace opacity",
+      "axis": "sex",
+      "phantom_observed": -0.01,
+      "observed_lo": -0.058,
+      "observed_hi": 0.036,
+      "phantom_classcond": -0.017,
+      "phantom_calibrated": -0.01,
+      "phantom_instancedep": -0.012
+    },
+    {
+      "finding": "Airspace opacity",
+      "axis": "elderly_women",
+      "phantom_observed": -0.039,
+      "observed_lo": -0.116,
+      "observed_hi": 0.06,
+      "phantom_classcond": -0.022,
+      "phantom_calibrated": -0.025,
+      "phantom_instancedep": -0.039
+    },
+    {
+      "finding": "Pneumothorax",
+      "axis": "sex",
+      "phantom_observed": 0.002,
+      "observed_lo": -0.115,
+      "observed_hi": 0.13,
+      "phantom_classcond": 0.029,
+      "phantom_calibrated": 0.037,
+      "phantom_instancedep": 0.081
+    },
+    {
+      "finding": "Pneumothorax",
+      "axis": "elderly_women",
+      "phantom_observed": 0.12,
+      "observed_lo": -0.059,
+      "observed_hi": 0.243,
+      "phantom_classcond": 0.077,
+      "phantom_calibrated": 0.087,
+      "phantom_instancedep": 0.124
+    },
+    {
+      "finding": "Nodule or mass",
+      "axis": "sex",
+      "phantom_observed": -0.046,
+      "observed_lo": -0.119,
+      "observed_hi": 0.075,
+      "phantom_classcond": -0.016,
+      "phantom_calibrated": -0.014,
+      "phantom_instancedep": -0.014
+    },
+    {
+      "finding": "Nodule or mass",
+      "axis": "elderly_women",
+      "phantom_observed": 0.049,
+      "observed_lo": -0.114,
+      "observed_hi": 0.195,
+      "phantom_classcond": 0.057,
+      "phantom_calibrated": 0.052,
+      "phantom_instancedep": 0.054
+    }
+  ],
+  "injection_crossfit_pooled": [
+    {
+      "random_MAE": 0.047,
+      "calibrated_MAE": 0.048,
+      "hardest_MAE": 0.053
+    }
+  ],
+  "reference_set_size_median_patients_80pct_power": {
+    "delta_0.05": 9750,
+    "delta_0.10": 2437,
+    "delta_0.15": 1084
+  },
+  "reference_set_size_current_patients": 1694,
+  "hyperparameter_selected_C": {
+    "xrv_densenet121|Airspace opacity": 0.001,
+    "xrv_densenet121|Pneumothorax": 0.001,
+    "xrv_densenet121|Nodule or mass": 0.001,
+    "resnet50_imagenet|Airspace opacity": 0.001,
+    "resnet50_imagenet|Pneumothorax": 0.001,
+    "resnet50_imagenet|Nodule or mass": 0.001,
+    "clip_vitb32|Airspace opacity": 0.001,
+    "clip_vitb32|Pneumothorax": 0.001,
+    "clip_vitb32|Nodule or mass": 0.001
+  },
+  "grouped_cv_rank_biserial_range": {
+    "Airspace opacity": [
+      0.167,
+      0.214
+    ],
+    "Nodule or mass": [
+      0.237,
+      0.272
+    ],
+    "Pneumothorax": [
+      0.131,
+      0.177
+    ]
+  },
+  "compute": {
+    "head_training_seconds_range": [
+      2.36,
+      12.49
+    ],
+    "end_to_end_ms_per_image_by_backbone": {
+      "clip_vitb32": 54.4,
+      "resnet50_imagenet": 65.9,
+      "xrv_densenet121": 349.2
+    }
+  },
+  "hardware": {
+    "platform": "Windows-10-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 181 Stepping 0, GenuineIntel",
+    "logical_cpus": 14,
+    "python": "3.11.15",
+    "ram_gb": 33.8
+  }
+}

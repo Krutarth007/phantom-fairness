@@ -1,0 +1,10 @@
+backbone,split,images,extraction_seconds,extraction_ms_per_image
+clip_vitb32,evalclean,4376,237.86,54.355575868372945
+resnet50_imagenet,evalclean,4376,288.31,65.8843692870201
+xrv_densenet121,evalclean,4376,1528.08,349.19561243144426
+clip_vitb32,train,20000,1144.61,57.2305
+resnet50_imagenet,train,20000,1917.0,95.85
+xrv_densenet121,train,20000,6839.21,341.9605
+clip_vitb32,val,12930,739.13,57.16395978344934
+resnet50_imagenet,val,12930,1456.27,112.62722351121423
+xrv_densenet121,val,12930,4494.6,347.6102088167053
