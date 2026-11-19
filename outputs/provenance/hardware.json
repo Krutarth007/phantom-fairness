@@ -1,0 +1,7 @@
+{
+  "platform": "Windows-10-10.0.26300-SP0",
+  "processor": "Intel64 Family 6 Model 181 Stepping 0, GenuineIntel",
+  "logical_cpus": 14,
+  "python": "3.11.15",
+  "ram_gb": 33.8
+}

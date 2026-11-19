@@ -1,0 +1,128 @@
+{
+  "created_utc": "2026-11-09T23:21:48Z",
+  "part": "2 (revision 2)",
+  "primary_backbone": "xrv_densenet121",
+  "backbones_run": [
+    "xrv_densenet121",
+    "resnet50_imagenet",
+    "clip_vitb32"
+  ],
+  "cohort": {
+    "train": 20000,
+    "val": 12930,
+    "held_out": 26921,
+    "eval": 4376,
+    "eval_patients": 1695
+  },
+  "cohort_hash_check": [
+    {
+      "split": "train",
+      "manifest": "train__clip_vitb32__manifest.json",
+      "n": 20000,
+      "match": true
+    },
+    {
+      "split": "train",
+      "manifest": "train__resnet50_imagenet__manifest.json",
+      "n": 20000,
+      "match": true
+    },
+    {
+      "split": "train",
+      "manifest": "train__xrv_densenet121__manifest.json",
+      "n": 20000,
+      "match": true
+    },
+    {
+      "split": "val",
+      "manifest": "val__clip_vitb32__manifest.json",
+      "n": 12930,
+      "match": true
+    },
+    {
+      "split": "val",
+      "manifest": "val__resnet50_imagenet__manifest.json",
+      "n": 12930,
+      "match": true
+    },
+    {
+      "split": "val",
+      "manifest": "val__xrv_densenet121__manifest.json",
+      "n": 12930,
+      "match": true
+    },
+    {
+      "split": "evalclean",
+      "manifest": "evalclean__clip_vitb32__manifest.json",
+      "n": 4376,
+      "match": true
+    },
+    {
+      "split": "evalclean",
+      "manifest": "evalclean__resnet50_imagenet__manifest.json",
+      "n": 4376,
+      "match": true
+    },
+    {
+      "split": "evalclean",
+      "manifest": "evalclean__xrv_densenet121__manifest.json",
+      "n": 4376,
+      "match": true
+    }
+  ],
+  "n_bootstrap": 5000,
+  "bootstrap_unit": "patient (primary); image (comparison)",
+  "seed": 1997,
+  "versions": {
+    "python": "3.11.15",
+    "numpy": "2.4.4",
+    "pandas": "3.0.3",
+    "matplotlib": "3.11.0",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "sklearn": "1.9.0",
+    "scipy": "1.17.1",
+    "statsmodels": "0.14.6",
+    "torch": "2.12.1+cpu",
+    "torchvision": "0.27.1+cpu",
+    "torchxrayvision": "1.4.0",
+    "open_clip": "3.3.0"
+  },
+  "hardware": {
+    "platform": "Windows-10-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 181 Stepping 0, GenuineIntel",
+    "logical_cpus": 14,
+    "python": "3.11.15",
+    "ram_gb": 33.8
+  },
+  "tables": {
+    "table10_phantom_decomposition.csv": "5f1c274692d0ed646a0a4067e56be2c4dcfc9522cf985dc5973686f03416b7cd",
+    "table10a_instance_dependence.csv": "022c027e944a5feaf85630f4efb0a4b84f727b120bbe6edc12bebcc7581510f6",
+    "table10b_instance_dependence_backbones.csv": "77ab0bcb71dc073ced90da345a66e6bf08a7d27b307018e99b701ceff485fb8d",
+    "table11_remedy.csv": "916eca1678d216bde1ffb31ab0b2710bba773c1047a12d57872995489f6e79d7",
+    "table12_robustness.csv": "067520eb71deb295ed3d3d52f90aeb57183133b08c5fac1689ae34cf98c37a70",
+    "table1_prevalence_agreement.csv": "84a46f663f44a94003455c8a8aaea09a0e62a1656cfc0c1e8102ef05ee997378",
+    "table2_headline_phantom_fairness.csv": "80e0d71350e6d0c167d8f6cd9d3fd2c7de393cfec18765ffc00615f80d8aef75",
+    "table2_v1_vs_v2_comparison.csv": "2f1f8451e275b8c66b718c6f7bd6f542243bcc7a70938dbfaf9bf9ad7471e919",
+    "table3_group_noise.csv": "cd300ed0d5ebd3a5429a43486c1b70508610c31057da1114cfaa5d64258350ce",
+    "table4_calibration.csv": "c8a6db9e91dfa0ce7b37d7574b348fc2595802c80ca357d06f9ba64ee656c802",
+    "table5_bias_amplification.csv": "06c0a948d60cbf862bab7da3e6015ee0f99fb0e3d9c03f6c57eee541cf6bda37",
+    "table6_backbone_ablation.csv": "3593f8f747130c4d9bb05787c313a9ced55c936cf6ecded169ca9e6c67a01414",
+    "table6_backbone_summary.csv": "c5f4c36f6be8048f6206b48e76effb6f913a1c595178231ad6f13b55119ea04d",
+    "table7_fracture_case.csv": "84051d36c0ef5d02c135d29fa3863cf3781fd3982b9afdd09616ab8fe0896fb4",
+    "table7b_fracture_unexposed_crossfit.csv": "852f578ecaa217347dd5d0aba9bfe513980b1eaa9d1471bbc3904f17f4e00f39",
+    "table8_padchest_discrimination.csv": "7cd1e411baefa43e45be6d80256b689012bfeca8d71fe13c82ff0e40a0f4ba7c",
+    "table9_cross_continental.csv": "6d0ed13159ac9705258e21459d71ae12d78a55f5a3f9ad8c3d010e7375eb0bcc",
+    "table_adjudicated_file_checks.csv": "0f39dbcf431b56e101767668fe767008720d98f4d9c8e73df7935166e5f1777c",
+    "table_cohort_flow.csv": "96322c0990a314269315715c73ec8497b660027bc959ca77164f35e4f2455331",
+    "table_eval_clustering.csv": "18942388268d4a0842d0d8400b57b153852795c57ba3c7cc394b417c1098a646",
+    "table_label_mapping.csv": "cae3429e97c90e48631af7ead22180865de8c8dc39d0fbb6532e25afddace283",
+    "table_noise_preview.csv": "9ba18146acd0ba7bdf3c66f0a4e6d760d2e3afcf3979c4f1c8032da3fc3a0e02",
+    "table_padchest_power.csv": "e9b248e95ae0c0b1a96b10e09df40f875f47abf387d0874205876562e7386ec6",
+    "table_prevalence_by_regime.csv": "77faaba8f4b1e52647815e17fcaae69ec4fa781051bbdf76d5382d844b12b368",
+    "table_representativeness_profile.csv": "34b09ef379b2e08cc9bd1b9440be7a29fb8ee33b80ae670e26d9ff9de14d8ed2",
+    "table_representativeness_smd.csv": "0a49214f836a1e6cab977c1bb740a02f311510c3f9885de8166c1f067b89000a",
+    "table_subgroup_auroc.csv": "254dadfd1f1b60e0366b654de6ad705ac0b2ed1619a220a3a3ffc4908e255942",
+    "table_subgroup_counts.csv": "ee097b384e3ec1b394f36ffc5d85877b64fdef4697349c4b2fd1a59683f4869c",
+    "table_threshold_sweep.csv": "fe2711547ae0c601728a454338b8be5dd21887d40c3d2477e414b73f4537abc0"
+  }
+}

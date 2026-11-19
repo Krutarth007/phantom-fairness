@@ -1,0 +1,55 @@
+{
+  "part": "4 (revision 2)",
+  "created_utc": "2026-11-12T05:22:16Z",
+  "seed": 1997,
+  "backbones": [
+    "xrv_densenet121",
+    "resnet50_imagenet",
+    "clip_vitb32"
+  ],
+  "n_bootstrap": 5000,
+  "versions": {
+    "python": "3.11.15",
+    "numpy": "2.4.4",
+    "pandas": "3.0.3",
+    "matplotlib": "3.11.0",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "sklearn": "1.9.0",
+    "scipy": "1.17.1",
+    "statsmodels": "0.14.6",
+    "torch": "2.12.1+cpu",
+    "torchvision": "0.27.1+cpu",
+    "torchxrayvision": "1.4.0",
+    "open_clip": "3.3.0"
+  },
+  "tables": {
+    "table13_instance_dependence_nlp_independent.csv": "558cefa115f6ae7b896603070e041619f22ae29d42d85c6d6266bac6360e553e",
+    "table13a_crossfit_reference_heads.csv": "4b53616a30f0683396d0a760a7ec4286bb1f96e5f69be0e8ca0bb23a5f6d3a7e",
+    "table13b_instance_dependence_all_sources.csv": "67242947bd6a5c5388a0a4c5b3d2ba3af957e97ff56db2e04c19f45756e2574a",
+    "table14_ontology_agreement.csv": "c76c9062f1526e4061352bb6b7f4287504645e4e6157c1eda608bf3a974afc63",
+    "table14_ontology_instance_dependence.csv": "b0cb75126f85f62e18de92c14099cc54abeb3570e26915629225ef73b01bf299",
+    "table14_ontology_regime_difference.csv": "ed906b39bbfe853be5ae9a93a332d8eee76813c8df74e21c4e1d0b4b5803c2e2",
+    "table14b_airspace_crosswalk.csv": "0a757e7cb7ffc1b18e500f45804baae55b1183ce35c53ce6b801935de722a68f",
+    "table15_reference_split_instance_dependence.csv": "c0dacd5d3e64d7034ca2110836e523b5e6e360827bc489c31c9f42cc71a2c259",
+    "table15_reference_split_noise.csv": "5a47c3afbebe4e5b722a77460bda81570865c51d63d3f561317afa06ca7da375",
+    "table15_regime_difference_split_test.csv": "a2ad510902241310aec5e07ecb03c3d561e1d020b64e1c2476a9b602a539868f",
+    "table15_regime_difference_split_val.csv": "f51aeee46b13bc3d5737405a68386fad15200d5e41fc02afbd422d00903cff45",
+    "table16_reference_set_size.csv": "55a9546394c2f2838a6ad13bae41048a3118ca6047637aefeb24b589da7e051d",
+    "table16b_power_simulation.csv": "157ee18f09a52763065952388897c4d5f3e2a1d1f863f39e3eb3586e33b999b0",
+    "table17a_hyperparameter_grid.csv": "23ef0605525fcb2f2ad1ca7f39d79d7fbf79a027a27b9d62fe23283c5e6dd650",
+    "table17b_hyperparameter_sensitivity.csv": "fea609aa21852c55201eb8d7b6830d3c73cedefe8dc2b15ac2a1046417888732",
+    "table18_grouped_cv_folds.csv": "32bad3cc151633168bdd3ddd8823e329b2b792a7c8b61f4415b50dfd0e7f3186",
+    "table18_grouped_cv_summary.csv": "fd90ee7a6076a1801ae71880c9231eadd0456e5e3d2fbe0a5ac7ba3d1dc46e6a",
+    "table19_noise_explanation_gee.csv": "44d6b9df29ddd8b31ee128adfbfd1f139f911c6f81ce0761fd4c2a7a337e29af",
+    "table20a_extraction_cost.csv": "81c09847522eb7f819a9cf63c95d96a6db83c21ef48e3d3abf9dc6d37a966021",
+    "table20b_training_inference_cost.csv": "9104bb8ef373a6a4e719c51de9de2c0acf41a00b63b27d58fe3fb7028462de53",
+    "table20c_analysis_runtimes.csv": "356b07ac582ae6594934262b5a679a18705a0eba0452899ffd151fff8034d3e9",
+    "table_backbone_auroc.csv": "8940e960f97f871bd84d45396d60e1723963411f3e66802481a8d95dea04c198",
+    "table_backbone_exposure.csv": "2988a98da05cc123a8f8c678fcf34884ccb58f72f00eedb0dbcec049115bbd0b"
+  },
+  "figures": {
+    "fig11_cam_examples.png": "e3a4746fb891693a9656a18218453f738dc283631d69da6a49021ff41c2dd28c",
+    "fig12_instance_dependence_sources.png": "3e303e14f2b028ea9ad19ebb09354f42efb190857ed61d30ed9d268f3e2c4208",
+    "fig13_reference_set_size.png": "f5a57b1c39f6e1d2e9511ccb561428c195ed37c2b386d118fdd9c10994c256e1"
+  }
+}

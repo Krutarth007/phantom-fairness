@@ -1,0 +1,14 @@
+{
+  "scaler_and_fit_total_s": 7.7044087999965996,
+  "fit_s": {
+    "Airspace opacity": 1.4948643000097945,
+    "Pneumothorax": 3.661611399962567,
+    "Nodule or mass": 1.6506904999841936
+  },
+  "eval_inference_s": {
+    "Airspace opacity": 0.01427519996650517,
+    "Pneumothorax": 0.012918699998408556,
+    "Nodule or mass": 0.01216410001507029
+  },
+  "n_eval": 4376
+}

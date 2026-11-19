@@ -1,0 +1,428 @@
+{
+  "project": "phantom_fairness",
+  "revision": 2,
+  "parts": {
+    "provenance_part1": {
+      "created_utc": "2026-06-21T18:46:24Z",
+      "seed": 1997,
+      "versions": {
+        "python": "3.11.15",
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "matplotlib": "3.11.0",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "torch": "2.12.1+cpu"
+      },
+      "config": {
+        "nih_root": "C:\\Users\\kruta\\Downloads\\NIH Chest X-rays",
+        "padchest_root": "C:\\Users\\kruta\\Downloads\\PadChest Chest X-rays (sample)",
+        "nih_labels_name": "Data_Entry_2017.csv",
+        "nih_google_name": "google2019_nih-chest-xray-labels.csv.gz",
+        "nih_google_raw_val": "four_findings_expert_labels_validation_labels.csv",
+        "nih_google_raw_test": "four_findings_expert_labels_test_labels.csv",
+        "padchest_labels_name": "chest_x_ray_images_labels_sample.csv",
+        "padchest_image_subdir": "sample",
+        "nih_image_subdirs_glob": "images_*",
+        "project_dir": "C:\\Users\\kruta\\Downloads\\phantom_fairness",
+        "canonical_findings": [
+          "Airspace opacity",
+          "Pneumothorax",
+          "Nodule or mass",
+          "Fracture"
+        ],
+        "age_bands": [
+          [
+            "<40",
+            0.0,
+            40.0
+          ],
+          [
+            "40-60",
+            40.0,
+            60.0
+          ],
+          [
+            ">60",
+            60.0,
+            200.0
+          ]
+        ],
+        "elderly_age_threshold": 60.0,
+        "embedding_backbones": [
+          "xrv_densenet121",
+          "resnet50_imagenet",
+          "clip_vitb32"
+        ],
+        "embed_batch_size": 32,
+        "embed_image_size": 224,
+        "l2_normalise_embeddings": false,
+        "random_seed": 1997,
+        "cpu_threads": 13,
+        "demo_subset_size": 64,
+        "run_embedding_demo": true,
+        "strict_paths": false
+      },
+      "inputs": {
+        "nih_labels": {
+          "path": "C:\\Users\\kruta\\Downloads\\NIH Chest X-rays\\Data_Entry_2017.csv",
+          "exists": true,
+          "sha256": "88f75094e25ccc0c6f1f9cdfd4b2f94f9379a0ae07d5ff4dcf94242707b07462",
+          "bytes": 7861152
+        },
+        "nih_google_packaged": {
+          "path": "C:\\Users\\kruta\\Downloads\\NIH Chest X-rays\\google2019_nih-chest-xray-labels.csv.gz",
+          "exists": true,
+          "sha256": "1d1b846e463753ed0219f67e21b10c8aef381897dbd64865c8191aa5794e8048",
+          "bytes": 45090
+        },
+        "padchest_labels": {
+          "path": "C:\\Users\\kruta\\Downloads\\PadChest Chest X-rays (sample)\\chest_x_ray_images_labels_sample.csv",
+          "exists": true,
+          "sha256": "f29a5ca1cd37060c2b10873364b31f284b555de846729744c865a1350ab50f06",
+          "bytes": 14949
+        }
+      },
+      "counts": {
+        "nih_images_indexed": 112120,
+        "nih_nlp_label_rows": 112120,
+        "nih_adjudicated_rows": 4376,
+        "nih_master_rows": 112120,
+        "nih_with_adjudicated": 4376,
+        "padchest_images_indexed": 24,
+        "padchest_label_rows": 24,
+        "padchest_master_rows": 24
+      },
+      "label_mapping_tight": {
+        "Airspace opacity": [
+          "Infiltration",
+          "Consolidation"
+        ],
+        "Pneumothorax": [
+          "Pneumothorax"
+        ],
+        "Nodule or mass": [
+          "Nodule",
+          "Mass"
+        ],
+        "Fracture": []
+      },
+      "padchest_term_map": {
+        "Airspace opacity": [
+          "infiltrates",
+          "alveolar pattern",
+          "consolidation",
+          "pneumonia",
+          "air bronchogram",
+          "increased density",
+          "atypical pneumonia",
+          "interstitial pattern",
+          "ground glass pattern"
+        ],
+        "Pneumothorax": [
+          "pneumothorax",
+          "hydropneumothorax"
+        ],
+        "Nodule or mass": [
+          "nodule",
+          "multiple nodules",
+          "mass",
+          "pulmonary mass",
+          "lung mass",
+          "pseudonodule"
+        ],
+        "Fracture": [
+          "fracture",
+          "rib fracture",
+          "clavicle fracture",
+          "humeral fracture",
+          "vertebral fracture",
+          "callus rib fracture"
+        ]
+      }
+    },
+    "provenance_part2": {
+      "created_utc": "2026-11-09T23:21:48Z",
+      "part": "2 (revision 2)",
+      "primary_backbone": "xrv_densenet121",
+      "backbones_run": [
+        "xrv_densenet121",
+        "resnet50_imagenet",
+        "clip_vitb32"
+      ],
+      "cohort": {
+        "train": 20000,
+        "val": 12930,
+        "held_out": 26921,
+        "eval": 4376,
+        "eval_patients": 1695
+      },
+      "cohort_hash_check": [
+        {
+          "split": "train",
+          "manifest": "train__clip_vitb32__manifest.json",
+          "n": 20000,
+          "match": true
+        },
+        {
+          "split": "train",
+          "manifest": "train__resnet50_imagenet__manifest.json",
+          "n": 20000,
+          "match": true
+        },
+        {
+          "split": "train",
+          "manifest": "train__xrv_densenet121__manifest.json",
+          "n": 20000,
+          "match": true
+        },
+        {
+          "split": "val",
+          "manifest": "val__clip_vitb32__manifest.json",
+          "n": 12930,
+          "match": true
+        },
+        {
+          "split": "val",
+          "manifest": "val__resnet50_imagenet__manifest.json",
+          "n": 12930,
+          "match": true
+        },
+        {
+          "split": "val",
+          "manifest": "val__xrv_densenet121__manifest.json",
+          "n": 12930,
+          "match": true
+        },
+        {
+          "split": "evalclean",
+          "manifest": "evalclean__clip_vitb32__manifest.json",
+          "n": 4376,
+          "match": true
+        },
+        {
+          "split": "evalclean",
+          "manifest": "evalclean__resnet50_imagenet__manifest.json",
+          "n": 4376,
+          "match": true
+        },
+        {
+          "split": "evalclean",
+          "manifest": "evalclean__xrv_densenet121__manifest.json",
+          "n": 4376,
+          "match": true
+        }
+      ],
+      "n_bootstrap": 5000,
+      "bootstrap_unit": "patient (primary); image (comparison)",
+      "seed": 1997,
+      "versions": {
+        "python": "3.11.15",
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "matplotlib": "3.11.0",
+        "platform": "Windows-10-10.0.26300-SP0",
+        "sklearn": "1.9.0",
+        "scipy": "1.17.1",
+        "statsmodels": "0.14.6",
+        "torch": "2.12.1+cpu",
+        "torchvision": "0.27.1+cpu",
+        "torchxrayvision": "1.4.0",
+        "open_clip": "3.3.0"
+      },
+      "hardware": {
+        "platform": "Windows-10-10.0.26300-SP0",
+        "processor": "Intel64 Family 6 Model 181 Stepping 0, GenuineIntel",
+        "logical_cpus": 14,
+        "python": "3.11.15",
+        "ram_gb": 33.8
+      },
+      "tables": {
+        "table10_phantom_decomposition.csv": "5f1c274692d0ed646a0a4067e56be2c4dcfc9522cf985dc5973686f03416b7cd",
+        "table10a_instance_dependence.csv": "022c027e944a5feaf85630f4efb0a4b84f727b120bbe6edc12bebcc7581510f6",
+        "table10b_instance_dependence_backbones.csv": "77ab0bcb71dc073ced90da345a66e6bf08a7d27b307018e99b701ceff485fb8d",
+        "table11_remedy.csv": "916eca1678d216bde1ffb31ab0b2710bba773c1047a12d57872995489f6e79d7",
+        "table12_robustness.csv": "067520eb71deb295ed3d3d52f90aeb57183133b08c5fac1689ae34cf98c37a70",
+        "table1_prevalence_agreement.csv": "84a46f663f44a94003455c8a8aaea09a0e62a1656cfc0c1e8102ef05ee997378",
+        "table2_headline_phantom_fairness.csv": "80e0d71350e6d0c167d8f6cd9d3fd2c7de393cfec18765ffc00615f80d8aef75",
+        "table2_v1_vs_v2_comparison.csv": "2f1f8451e275b8c66b718c6f7bd6f542243bcc7a70938dbfaf9bf9ad7471e919",
+        "table3_group_noise.csv": "cd300ed0d5ebd3a5429a43486c1b70508610c31057da1114cfaa5d64258350ce",
+        "table4_calibration.csv": "c8a6db9e91dfa0ce7b37d7574b348fc2595802c80ca357d06f9ba64ee656c802",
+        "table5_bias_amplification.csv": "06c0a948d60cbf862bab7da3e6015ee0f99fb0e3d9c03f6c57eee541cf6bda37",
+        "table6_backbone_ablation.csv": "3593f8f747130c4d9bb05787c313a9ced55c936cf6ecded169ca9e6c67a01414",
+        "table6_backbone_summary.csv": "c5f4c36f6be8048f6206b48e76effb6f913a1c595178231ad6f13b55119ea04d",
+        "table7_fracture_case.csv": "84051d36c0ef5d02c135d29fa3863cf3781fd3982b9afdd09616ab8fe0896fb4",
+        "table7b_fracture_unexposed_crossfit.csv": "852f578ecaa217347dd5d0aba9bfe513980b1eaa9d1471bbc3904f17f4e00f39",
+        "table8_padchest_discrimination.csv": "7cd1e411baefa43e45be6d80256b689012bfeca8d71fe13c82ff0e40a0f4ba7c",
+        "table9_cross_continental.csv": "6d0ed13159ac9705258e21459d71ae12d78a55f5a3f9ad8c3d010e7375eb0bcc",
+        "table_adjudicated_file_checks.csv": "0f39dbcf431b56e101767668fe767008720d98f4d9c8e73df7935166e5f1777c",
+        "table_cohort_flow.csv": "96322c0990a314269315715c73ec8497b660027bc959ca77164f35e4f2455331",
+        "table_eval_clustering.csv": "18942388268d4a0842d0d8400b57b153852795c57ba3c7cc394b417c1098a646",
+        "table_label_mapping.csv": "cae3429e97c90e48631af7ead22180865de8c8dc39d0fbb6532e25afddace283",
+        "table_noise_preview.csv": "9ba18146acd0ba7bdf3c66f0a4e6d760d2e3afcf3979c4f1c8032da3fc3a0e02",
+        "table_padchest_power.csv": "e9b248e95ae0c0b1a96b10e09df40f875f47abf387d0874205876562e7386ec6",
+        "table_prevalence_by_regime.csv": "77faaba8f4b1e52647815e17fcaae69ec4fa781051bbdf76d5382d844b12b368",
+        "table_representativeness_profile.csv": "34b09ef379b2e08cc9bd1b9440be7a29fb8ee33b80ae670e26d9ff9de14d8ed2",
+        "table_representativeness_smd.csv": "0a49214f836a1e6cab977c1bb740a02f311510c3f9885de8166c1f067b89000a",
+        "table_subgroup_auroc.csv": "254dadfd1f1b60e0366b654de6ad705ac0b2ed1619a220a3a3ffc4908e255942",
+        "table_subgroup_counts.csv": "ee097b384e3ec1b394f36ffc5d85877b64fdef4697349c4b2fd1a59683f4869c",
+        "table_threshold_sweep.csv": "fe2711547ae0c601728a454338b8be5dd21887d40c3d2477e414b73f4537abc0"
+      }
+    },
+    "provenance_part3": {
+      "part": 3,
+      "backbone_primary": "xrv_densenet121",
+      "n_eval_clean": 4375,
+      "n_padchest": 24,
+      "n_bootstrap": 5000,
+      "n_inject_mc": 200,
+      "seed": 1997,
+      "tables": {
+        "table8_padchest_discrimination.csv": "7cd1e411baefa43e45be6d80256b689012bfeca8d71fe13c82ff0e40a0f4ba7c",
+        "table9_cross_continental.csv": "6d0ed13159ac9705258e21459d71ae12d78a55f5a3f9ad8c3d010e7375eb0bcc",
+        "table10_phantom_decomposition.csv": "5f1c274692d0ed646a0a4067e56be2c4dcfc9522cf985dc5973686f03416b7cd",
+        "table10a_instance_dependence.csv": "022c027e944a5feaf85630f4efb0a4b84f727b120bbe6edc12bebcc7581510f6",
+        "table10b_instance_dependence_backbones.csv": "77ab0bcb71dc073ced90da345a66e6bf08a7d27b307018e99b701ceff485fb8d",
+        "table11_remedy.csv": "916eca1678d216bde1ffb31ab0b2710bba773c1047a12d57872995489f6e79d7",
+        "table12_robustness.csv": "067520eb71deb295ed3d3d52f90aeb57183133b08c5fac1689ae34cf98c37a70"
+      },
+      "figures": {
+        "fig9_mechanism.png": "23580455b421db000599d56161b17feb922c069870028a0433ad5d51c15c5d7f",
+        "fig10_remedy.png": "edfaf4e42a9e5a460cf01b65f2618918c378804de78b708daf1830d4eac3e283"
+      },
+      "results_doc": "e3d4cc58d12a206a295fd1a49d08689eb144da2144e0d3438de235ab4fc3e225"
+    },
+    "provenance_part4": {
+      "part": "4 (revision 2)",
+      "created_utc": "2026-11-12T05:22:16Z",
+      "seed": 1997,
+      "backbones": [
+        "xrv_densenet121",
+        "resnet50_imagenet",
+        "clip_vitb32"
+      ],
+      "n_bootstrap": 5000,
+      "versions": {
+        "python": "3.11.15",
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "matplotlib": "3.11.0",
+        "platform": "Windows-10-10.0.26300-SP0",
+        "sklearn": "1.9.0",
+        "scipy": "1.17.1",
+        "statsmodels": "0.14.6",
+        "torch": "2.12.1+cpu",
+        "torchvision": "0.27.1+cpu",
+        "torchxrayvision": "1.4.0",
+        "open_clip": "3.3.0"
+      },
+      "tables": {
+        "table13_instance_dependence_nlp_independent.csv": "558cefa115f6ae7b896603070e041619f22ae29d42d85c6d6266bac6360e553e",
+        "table13a_crossfit_reference_heads.csv": "4b53616a30f0683396d0a760a7ec4286bb1f96e5f69be0e8ca0bb23a5f6d3a7e",
+        "table13b_instance_dependence_all_sources.csv": "67242947bd6a5c5388a0a4c5b3d2ba3af957e97ff56db2e04c19f45756e2574a",
+        "table14_ontology_agreement.csv": "c76c9062f1526e4061352bb6b7f4287504645e4e6157c1eda608bf3a974afc63",
+        "table14_ontology_instance_dependence.csv": "b0cb75126f85f62e18de92c14099cc54abeb3570e26915629225ef73b01bf299",
+        "table14_ontology_regime_difference.csv": "ed906b39bbfe853be5ae9a93a332d8eee76813c8df74e21c4e1d0b4b5803c2e2",
+        "table14b_airspace_crosswalk.csv": "0a757e7cb7ffc1b18e500f45804baae55b1183ce35c53ce6b801935de722a68f",
+        "table15_reference_split_instance_dependence.csv": "c0dacd5d3e64d7034ca2110836e523b5e6e360827bc489c31c9f42cc71a2c259",
+        "table15_reference_split_noise.csv": "5a47c3afbebe4e5b722a77460bda81570865c51d63d3f561317afa06ca7da375",
+        "table15_regime_difference_split_test.csv": "a2ad510902241310aec5e07ecb03c3d561e1d020b64e1c2476a9b602a539868f",
+        "table15_regime_difference_split_val.csv": "f51aeee46b13bc3d5737405a68386fad15200d5e41fc02afbd422d00903cff45",
+        "table16_reference_set_size.csv": "55a9546394c2f2838a6ad13bae41048a3118ca6047637aefeb24b589da7e051d",
+        "table16b_power_simulation.csv": "157ee18f09a52763065952388897c4d5f3e2a1d1f863f39e3eb3586e33b999b0",
+        "table17a_hyperparameter_grid.csv": "23ef0605525fcb2f2ad1ca7f39d79d7fbf79a027a27b9d62fe23283c5e6dd650",
+        "table17b_hyperparameter_sensitivity.csv": "fea609aa21852c55201eb8d7b6830d3c73cedefe8dc2b15ac2a1046417888732",
+        "table18_grouped_cv_folds.csv": "32bad3cc151633168bdd3ddd8823e329b2b792a7c8b61f4415b50dfd0e7f3186",
+        "table18_grouped_cv_summary.csv": "fd90ee7a6076a1801ae71880c9231eadd0456e5e3d2fbe0a5ac7ba3d1dc46e6a",
+        "table19_noise_explanation_gee.csv": "44d6b9df29ddd8b31ee128adfbfd1f139f911c6f81ce0761fd4c2a7a337e29af",
+        "table20a_extraction_cost.csv": "81c09847522eb7f819a9cf63c95d96a6db83c21ef48e3d3abf9dc6d37a966021",
+        "table20b_training_inference_cost.csv": "9104bb8ef373a6a4e719c51de9de2c0acf41a00b63b27d58fe3fb7028462de53",
+        "table20c_analysis_runtimes.csv": "356b07ac582ae6594934262b5a679a18705a0eba0452899ffd151fff8034d3e9",
+        "table_backbone_auroc.csv": "8940e960f97f871bd84d45396d60e1723963411f3e66802481a8d95dea04c198",
+        "table_backbone_exposure.csv": "2988a98da05cc123a8f8c678fcf34884ccb58f72f00eedb0dbcec049115bbd0b"
+      },
+      "figures": {
+        "fig11_cam_examples.png": "e3a4746fb891693a9656a18218453f738dc283631d69da6a49021ff41c2dd28c",
+        "fig12_instance_dependence_sources.png": "3e303e14f2b028ea9ad19ebb09354f42efb190857ed61d30ed9d268f3e2c4208",
+        "fig13_reference_set_size.png": "f5a57b1c39f6e1d2e9511ccb561428c195ed37c2b386d118fdd9c10994c256e1"
+      }
+    }
+  },
+  "all_tables": {
+    "table10_phantom_decomposition.csv": "33aa6156d0f476d5b9a6821c8df0f9cf6fb0aa3eb11d24319fe66b32f8836247",
+    "table10a_instance_dependence.csv": "76e6dce4d0731dbb8f004fc23e80d5c1d0058938b1203d380eaf29c0821bb5e2",
+    "table10b_instance_dependence_backbones.csv": "746f93fb43e6f55067561c69116b048e11af6cf4a72145038e0534f5c7ddaf85",
+    "table10c_injection_bootstrap_replicates.csv": "f1d74b263f1495ae83742c2188b766e88b2e716a1906ac3bb92475bc524033d2",
+    "table10c_injection_bootstrap_summary.csv": "06e8d477386bb2635abd3614c47f569daf94205268adfc874ae4791661555813",
+    "table10d_injection_crossfit_replicates.csv": "82933c38f24bdcde441cafd64f111716f88b031d80e10f00d88fe4f8d841796d",
+    "table10d_injection_crossfit_summary.csv": "2651fa6c3a95d62d160dfa66d65b7c45308e6ac40959951c16878329dd973dfc",
+    "table10e_evidence_summary.csv": "2daefa3e487e43266e6145d6bd88666e3d4daa3dfcf9effd283a0b1430f8adbb",
+    "table11_remedy.csv": "916eca1678d216bde1ffb31ab0b2710bba773c1047a12d57872995489f6e79d7",
+    "table12_robustness.csv": "067520eb71deb295ed3d3d52f90aeb57183133b08c5fac1689ae34cf98c37a70",
+    "table13_instance_dependence_nlp_independent.csv": "558cefa115f6ae7b896603070e041619f22ae29d42d85c6d6266bac6360e553e",
+    "table13a_crossfit_reference_heads.csv": "4b53616a30f0683396d0a760a7ec4286bb1f96e5f69be0e8ca0bb23a5f6d3a7e",
+    "table13b_instance_dependence_all_sources.csv": "67242947bd6a5c5388a0a4c5b3d2ba3af957e97ff56db2e04c19f45756e2574a",
+    "table14_ontology_agreement.csv": "c76c9062f1526e4061352bb6b7f4287504645e4e6157c1eda608bf3a974afc63",
+    "table14_ontology_instance_dependence.csv": "b0cb75126f85f62e18de92c14099cc54abeb3570e26915629225ef73b01bf299",
+    "table14_ontology_regime_difference.csv": "ed906b39bbfe853be5ae9a93a332d8eee76813c8df74e21c4e1d0b4b5803c2e2",
+    "table14b_airspace_crosswalk.csv": "0a757e7cb7ffc1b18e500f45804baae55b1183ce35c53ce6b801935de722a68f",
+    "table15_reference_split_instance_dependence.csv": "c0dacd5d3e64d7034ca2110836e523b5e6e360827bc489c31c9f42cc71a2c259",
+    "table15_reference_split_noise.csv": "5a47c3afbebe4e5b722a77460bda81570865c51d63d3f561317afa06ca7da375",
+    "table15_regime_difference_split_test.csv": "a2ad510902241310aec5e07ecb03c3d561e1d020b64e1c2476a9b602a539868f",
+    "table15_regime_difference_split_val.csv": "f51aeee46b13bc3d5737405a68386fad15200d5e41fc02afbd422d00903cff45",
+    "table16_reference_set_size.csv": "55a9546394c2f2838a6ad13bae41048a3118ca6047637aefeb24b589da7e051d",
+    "table16b_power_simulation.csv": "157ee18f09a52763065952388897c4d5f3e2a1d1f863f39e3eb3586e33b999b0",
+    "table17a_hyperparameter_grid.csv": "23ef0605525fcb2f2ad1ca7f39d79d7fbf79a027a27b9d62fe23283c5e6dd650",
+    "table17b_hyperparameter_sensitivity.csv": "fea609aa21852c55201eb8d7b6830d3c73cedefe8dc2b15ac2a1046417888732",
+    "table18_grouped_cv_folds.csv": "32bad3cc151633168bdd3ddd8823e329b2b792a7c8b61f4415b50dfd0e7f3186",
+    "table18_grouped_cv_summary.csv": "fd90ee7a6076a1801ae71880c9231eadd0456e5e3d2fbe0a5ac7ba3d1dc46e6a",
+    "table19_noise_explanation_gee.csv": "44d6b9df29ddd8b31ee128adfbfd1f139f911c6f81ce0761fd4c2a7a337e29af",
+    "table1_prevalence_agreement.csv": "84a46f663f44a94003455c8a8aaea09a0e62a1656cfc0c1e8102ef05ee997378",
+    "table20a_extraction_cost.csv": "81c09847522eb7f819a9cf63c95d96a6db83c21ef48e3d3abf9dc6d37a966021",
+    "table20b_training_inference_cost.csv": "9104bb8ef373a6a4e719c51de9de2c0acf41a00b63b27d58fe3fb7028462de53",
+    "table20c_analysis_runtimes.csv": "356b07ac582ae6594934262b5a679a18705a0eba0452899ffd151fff8034d3e9",
+    "table2_headline_phantom_fairness.csv": "80e0d71350e6d0c167d8f6cd9d3fd2c7de393cfec18765ffc00615f80d8aef75",
+    "table2_v1_vs_v2_comparison.csv": "2f1f8451e275b8c66b718c6f7bd6f542243bcc7a70938dbfaf9bf9ad7471e919",
+    "table3_group_noise.csv": "cd300ed0d5ebd3a5429a43486c1b70508610c31057da1114cfaa5d64258350ce",
+    "table4_calibration.csv": "c8a6db9e91dfa0ce7b37d7574b348fc2595802c80ca357d06f9ba64ee656c802",
+    "table5_bias_amplification.csv": "06c0a948d60cbf862bab7da3e6015ee0f99fb0e3d9c03f6c57eee541cf6bda37",
+    "table6_backbone_ablation.csv": "3593f8f747130c4d9bb05787c313a9ced55c936cf6ecded169ca9e6c67a01414",
+    "table6_backbone_summary.csv": "c5f4c36f6be8048f6206b48e76effb6f913a1c595178231ad6f13b55119ea04d",
+    "table7_fracture_case.csv": "84051d36c0ef5d02c135d29fa3863cf3781fd3982b9afdd09616ab8fe0896fb4",
+    "table7b_fracture_unexposed_crossfit.csv": "852f578ecaa217347dd5d0aba9bfe513980b1eaa9d1471bbc3904f17f4e00f39",
+    "table8_padchest_discrimination.csv": "7cd1e411baefa43e45be6d80256b689012bfeca8d71fe13c82ff0e40a0f4ba7c",
+    "table9_cross_continental.csv": "6d0ed13159ac9705258e21459d71ae12d78a55f5a3f9ad8c3d010e7375eb0bcc",
+    "table_adjudicated_file_checks.csv": "0f39dbcf431b56e101767668fe767008720d98f4d9c8e73df7935166e5f1777c",
+    "table_backbone_auroc.csv": "8940e960f97f871bd84d45396d60e1723963411f3e66802481a8d95dea04c198",
+    "table_backbone_exposure.csv": "2988a98da05cc123a8f8c678fcf34884ccb58f72f00eedb0dbcec049115bbd0b",
+    "table_cam_images.csv": "e2a0e84c5d6a153faea86f6f3141fbd18fecc4cf654aea1ce5740ffbae7c8a1c",
+    "table_cohort_flow.csv": "96322c0990a314269315715c73ec8497b660027bc959ca77164f35e4f2455331",
+    "table_eval_clustering.csv": "18942388268d4a0842d0d8400b57b153852795c57ba3c7cc394b417c1098a646",
+    "table_label_mapping.csv": "cae3429e97c90e48631af7ead22180865de8c8dc39d0fbb6532e25afddace283",
+    "table_noise_preview.csv": "9ba18146acd0ba7bdf3c66f0a4e6d760d2e3afcf3979c4f1c8032da3fc3a0e02",
+    "table_padchest_power.csv": "e9b248e95ae0c0b1a96b10e09df40f875f47abf387d0874205876562e7386ec6",
+    "table_prevalence_by_regime.csv": "77faaba8f4b1e52647815e17fcaae69ec4fa781051bbdf76d5382d844b12b368",
+    "table_representativeness_profile.csv": "34b09ef379b2e08cc9bd1b9440be7a29fb8ee33b80ae670e26d9ff9de14d8ed2",
+    "table_representativeness_smd.csv": "0a49214f836a1e6cab977c1bb740a02f311510c3f9885de8166c1f067b89000a",
+    "table_subgroup_auroc.csv": "254dadfd1f1b60e0366b654de6ad705ac0b2ed1619a220a3a3ffc4908e255942",
+    "table_subgroup_counts.csv": "ee097b384e3ec1b394f36ffc5d85877b64fdef4697349c4b2fd1a59683f4869c",
+    "table_threshold_sweep.csv": "fe2711547ae0c601728a454338b8be5dd21887d40c3d2477e414b73f4537abc0"
+  },
+  "all_figures": {
+    "fig10_remedy.png": "edfaf4e42a9e5a460cf01b65f2618918c378804de78b708daf1830d4eac3e283",
+    "fig11_cam_examples.png": "e3a4746fb891693a9656a18218453f738dc283631d69da6a49021ff41c2dd28c",
+    "fig12_instance_dependence_sources.png": "3e303e14f2b028ea9ad19ebb09354f42efb190857ed61d30ed9d268f3e2c4208",
+    "fig13_reference_set_size.png": "f5a57b1c39f6e1d2e9511ccb561428c195ed37c2b386d118fdd9c10994c256e1",
+    "fig1_prevalence_by_regime.png": "f9c9821a2433e5b50252e59436d49c29ff7b12e1b0eb5adec1c7451b2af77455",
+    "fig2_nih_sex_age.png": "13cb4b9f04f293820e30f6de34784241b2777ba96e906517ef2bf146c7f4e270",
+    "fig3_projection_mix.png": "49514be8754eeb14dc84424d21d5936245dac51050ef4959bd915e34d6a80591",
+    "fig4_phantom_scatter.png": "2bc8a21d3e9c388852b518312aefa6512388df433b25ad5507cbe6e39e0bb282",
+    "fig5_noise_heatmap.png": "c1f9da585ace0cf24d051d372d66d8fae16b49a50aab2bc6620bc29d7626861e",
+    "fig6_reliability_sex.png": "51e99ad6767539f59d6e88bf5b93f9ca427557afdbfd39c2d7eea6c6712b0186",
+    "fig7_roc_pr_Airspace_opacity.png": "56a3eb3125f76583a226a50626cb9ec7dea3f6e2d32128ab919ef52c0925130b",
+    "fig7_roc_pr_Nodule_or_mass.png": "0a17ae715ec358e6d7abaacca2fecb6b217f848161c5d925ceae6791bc70860e",
+    "fig7_roc_pr_Pneumothorax.png": "6a699da18bb62c51bfe22a3eafbda1dc8ab15f8391407afc593d117fe125ab31",
+    "fig8_threshold_sweep.png": "d39af146dd167e32932afd96d380827b0f247bfa16d7a6632fcfc77a35eca9ab",
+    "fig9_mechanism.png": "23580455b421db000599d56161b17feb922c069870028a0433ad5d51c15c5d7f"
+  },
+  "phantom_core_sha256": "6deaf47c7019602a43529f154b46bd6ebd66736319397bdb00fabb5dbaaa92b8"
+}
