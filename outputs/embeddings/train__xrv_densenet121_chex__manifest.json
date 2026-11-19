@@ -1,0 +1,9 @@
+{
+  "tag": "train",
+  "backbone": "xrv_densenet121_chex",
+  "n": 20000,
+  "dim": 1024,
+  "id_hash": "897d34d543ed29d945189731d663375f6198f304a6fe6c3c9737910f6b4b2614",
+  "seconds": 4395.8,
+  "per_image_ms": 219.79
+}

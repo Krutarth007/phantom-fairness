@@ -1,0 +1,9 @@
+{
+  "tag": "evalclean",
+  "backbone": "xrv_densenet121_chex",
+  "n": 4376,
+  "dim": 1024,
+  "id_hash": "70fdec5c6be4857aa9baf784a974313c8435e89370abfdccb660fd4fb1628df0",
+  "seconds": 953.2,
+  "per_image_ms": 217.82
+}
